@@ -1,0 +1,28 @@
+{
+  "name": "bulletin_etudiant_anneex",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000B\u0000u\u0000l\u0000l\u0000e\u0000t\u0000i\u0000n\u0000_\u0000E\u0000t\u0000u\u0000d\u0000i\u0000a\u0000n\u0000t\u0000_\u0000A\u0000n\u0000n\u0000e\u0000e\u0000X\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start":"node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuocAnDg/Bulletin_Etudiant_AnneeX.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuocAnDg/Bulletin_Etudiant_AnneeX/issues"
+  },
+  "homepage": "https://github.com/QuocAnDg/Bulletin_Etudiant_AnneeX#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "sqlite3": "^5.1.7"
+  }
+}
