@@ -1,8 +1,8 @@
 const fs = require("fs");
 const { getInscriptions, getCours, getNotes } = require("./api");
-const { ects_total_inscrits, ects_obtenus, moyenne_ponderee, reussite, details } = require("./utils");
+const { ects_total_inscrits, ects_obtenus, moyenne_ponderee, reussite, details, rapportAnomalies } = require("./utils");
 
-async function bulletinsEtudiants() {
+async function bulletinsEtudiantsEtAnomalies() {
   try {
     const inscriptions = await getInscriptions();
     const coursList = await getCours();
@@ -25,11 +25,14 @@ async function bulletinsEtudiants() {
         details: details(ins, coursList, notesList)
       });
     }
+    const anomalies = rapportAnomalies(inscriptions, coursList, notesList);
 
     fs.writeFileSync("output/bulletins.json", JSON.stringify(bulletins, null, 2));
+    fs.writeFileSync("output/anomalies.json", JSON.stringify(anomalies, null, 2));
+
     return bulletins;
   } catch (err) {
     console.error(err);
   }
 }
-bulletinsEtudiants();
+bulletinsEtudiantsEtAnomalies();

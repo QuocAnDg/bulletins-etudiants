@@ -1,3 +1,6 @@
+const NOTE_REUSSIE = 10;
+const NBR_CREDITS_ANNEE = 60;
+
 // Récupère la liste des cours inscrits pour un inscrit
 function cours_inscrits(inscrit) {
   return inscrit.cours_json ? JSON.parse(inscrit.cours_json) : [];
@@ -11,7 +14,7 @@ function calculECTS(inscrit, liste_cours, liste_notes, avecValidation = false) {
       if (cours){
         if (avecValidation) {
           const note = liste_notes.find(n => n.matricule === inscrit.matricule && n.mnemonique === mnemo);
-          if (note && note.note >= 10) {
+          if (note && note.note >= NOTE_REUSSIE) {
             total += cours.credit;
           }
         } else {
@@ -61,7 +64,7 @@ function reussite(inscription, liste_cours, liste_notes) {
   const ectsObtenus = ects_obtenus(inscription, liste_cours, liste_notes);
   const moyenne = moyenne_ponderee(inscription, liste_cours, liste_notes);
 
-  if (ectsObtenus >= 60) return true;
+  if (ectsObtenus >= NBR_CREDITS_ANNEE) return true;
 
   const coursMnem = cours_inscrits(inscription);
   for (const mnemo of coursMnem) {
@@ -71,7 +74,7 @@ function reussite(inscription, liste_cours, liste_notes) {
     }
   }
 
-  return moyenne !== null && moyenne >= 10;
+  return moyenne !== null && moyenne >= NOTE_REUSSIE;
 }
 
 
@@ -95,6 +98,52 @@ function details(inscrit, liste_cours, liste_notes) {
     .sort((a, b) => a.mnemonique.localeCompare(b.mnemonique));
 }
 
+function rapportAnomalies(inscriptions, coursList, notesList) {
+  const anomalies = [];
+
+  inscriptions.forEach(ins => {
+    const { matricule, annee_etude } = ins;
+
+    const coursMnemo = cours_inscrits(ins);
+     const notesEtudiant = notesList.filter(n => n.matricule === matricule);
+    notesEtudiant.forEach(note => {
+      if (!coursMnemo.includes(note.mnemonique)) {
+        anomalies.push({ type: "NOTE_SANS_INSCRIPTION", matricule, annee: annee_etude, detail: note.mnemonique });
+      }
+    });
+     coursMnemo.forEach(mnemo => {
+      const cours = coursList.find(c => c.mnemonique === mnemo);
+      if (!cours) {
+        anomalies.push({ type: "COURS_INCONNU", matricule, annee: annee_etude, detail: mnemo });
+      }
+    });
+    if (coursMnemo.length === 0){
+      anomalies.push({ type: "INSCRIPTION_SANS_COURS", matricule, annee: annee_etude, detail: null });
+    }
+    const vus = new Set(); 
+    notesEtudiant.forEach(note => {
+      const mnemo = note.mnemonique;
+      if (vus.has(mnemo)) {
+        anomalies.push({ type: "DUPLICATA_NOTE", matricule, annee: annee_etude, detail: mnemo });
+      } else {
+        vus.add(mnemo);
+      }
+    });
+
+    coursMnemo.forEach(mnemo => {
+      const cours = coursList.find(c => c.mnemonique === mnemo);
+      if (!cours) return;
+      const note = notesList.find(n => n.matricule === matricule && n.mnemonique === mnemo);
+      if (note && (cours.credit === null || cours.credit <= 0)) {
+        anomalies.push({ type: "NOTE_SANS_CREDIT", matricule, annee: annee_etude, detail: mnemo });
+      }
+    });
+  });
+
+  return anomalies;
+}
+
+
 module.exports = {
   cours_inscrits,
   calculECTS,
@@ -102,6 +151,7 @@ module.exports = {
   ects_obtenus,
   moyenne_ponderee,
   reussite,
-  details
+  details,
+  rapportAnomalies
 };
 

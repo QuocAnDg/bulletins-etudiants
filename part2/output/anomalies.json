@@ -1,0 +1,80 @@
+[
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023002",
+    "annee": 1,
+    "detail": "MAT201"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023002",
+    "annee": 1,
+    "detail": "INF220"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023002",
+    "annee": 1,
+    "detail": "PSY210"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023002",
+    "annee": 2,
+    "detail": "MAT101"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023002",
+    "annee": 2,
+    "detail": "INF120"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023002",
+    "annee": 2,
+    "detail": "HIS115"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023004",
+    "annee": 2,
+    "detail": "PSY310"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023004",
+    "annee": 2,
+    "detail": "NEU301"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023004",
+    "annee": 2,
+    "detail": "STA300"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023004",
+    "annee": 3,
+    "detail": "MAT201"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023004",
+    "annee": 3,
+    "detail": "STA200"
+  },
+  {
+    "type": "NOTE_SANS_INSCRIPTION",
+    "matricule": "2023004",
+    "annee": 3,
+    "detail": "SOC130"
+  },
+  {
+    "type": "COURS_INCONNU",
+    "matricule": "2023004",
+    "annee": 3,
+    "detail": "INF300"
+  }
+]
