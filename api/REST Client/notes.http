@@ -1,0 +1,35 @@
+# ================================
+# Lister toutes les notes
+# ================================
+GET http://localhost:3000/notes
+Accept: application/json
+
+###
+
+# =====================================
+# Récupérer une note par ID
+# =====================================
+GET http://localhost:3000/notes/1
+Accept: application/json
+
+###
+
+# ================================
+# Ajouter une nouvelle note
+# ================================
+POST http://localhost:3000/notes
+Content-Type: application/json
+
+{
+  "matricule": "2023001",
+  "mnemonique": "MAT101",
+  "note": 15
+}
+
+###
+
+# ================================
+# Supprimer une note par ID
+# ================================
+DELETE http://localhost:3000/notes/1
+Accept: application/json

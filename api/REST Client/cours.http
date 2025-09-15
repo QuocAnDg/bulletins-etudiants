@@ -1,0 +1,36 @@
+# ================================
+# Lister toutes les inscriptions
+# ================================
+GET http://localhost:3000/cours
+Accept: application/json
+
+###
+
+# =====================================
+# Récupérer une inscription par matricule
+# =====================================
+GET http://localhost:3000/cours/INF120
+Accept: application/json
+
+###
+
+# ================================
+# Ajouter une nouveau cours
+# ================================
+POST http://localhost:3000/cours
+Content-Type: application/json
+
+{
+  "mnemonique": "INF121",
+  "intitule": "test1",
+  "credit": 5,
+  "titulaire": "test2"
+}
+
+###
+
+# ================================
+# Desinscription
+# ================================
+DELETE http://localhost:3000/cours/INF120
+Accept: application/json

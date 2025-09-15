@@ -1,0 +1,48 @@
+# ================================
+# Lister toutes les inscriptions
+# ================================
+GET http://localhost:3000/inscriptions
+Accept: application/json
+
+###
+
+# =====================================
+# Récupérer une inscription par matricule
+# =====================================
+GET http://localhost:3000/inscriptions/2023001
+Accept: application/json
+
+###
+
+# ================================
+# Ajouter une nouvelle inscription
+# ================================
+POST http://localhost:3000/inscriptions
+Content-Type: application/json
+
+{
+  "nom": "d",
+  "prenom": "c",
+  "annee_etude": 1,
+  "cours_json": ["MAT101", "INF120"]
+}
+
+###
+
+# ================================
+# Desinscription
+# ================================
+DELETE http://localhost:3000/inscriptions/2023001
+Accept: application/json
+
+### 
+
+# =====================================
+# Ajouter un cours à une personne inscrite
+# =====================================
+POST http://localhost:3000/inscriptions/2023001/cours
+Content-Type: application/json
+
+{
+  "mnemonique": "INF320"
+}
