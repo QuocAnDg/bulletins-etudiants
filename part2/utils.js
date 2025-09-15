@@ -1,0 +1,107 @@
+// Récupère la liste des cours inscrits pour un inscrit
+function cours_inscrits(inscrit) {
+  return inscrit.cours_json ? JSON.parse(inscrit.cours_json) : [];
+}
+
+function calculECTS(inscrit, liste_cours, liste_notes, avecValidation = false) {
+
+  let total = 0;
+  cours_inscrits(inscrit).forEach(mnemo => {
+      const cours = liste_cours.find(c => c.mnemonique === mnemo);
+      if (cours){
+        if (avecValidation) {
+          const note = liste_notes.find(n => n.matricule === inscrit.matricule && n.mnemonique === mnemo);
+          if (note && note.note >= 10) {
+            total += cours.credit;
+          }
+        } else {
+        total += cours.credit;
+        }
+      }
+  });
+
+  return total;
+}
+
+function ects_total_inscrits(inscrit, liste_cours) {
+  return calculECTS(inscrit, liste_cours, [], false);
+}
+
+function ects_obtenus(inscrit, liste_cours, liste_notes) {
+  return calculECTS(inscrit, liste_cours, liste_notes, true);
+}
+
+function moyenne_ponderee(inscrit, liste_cours, liste_notes) {
+  let cours_inscrits = [];
+  try {
+    cours_inscrits = inscrit.cours_json ? JSON.parse(inscrit.cours_json) : [];
+  } catch (e) {
+    cours_inscrits = [];
+  }
+
+  let totalPondere = 0;
+  let totalCredits = 0;
+
+  cours_inscrits.forEach(mnemo => {
+    const cours = liste_cours.find(c => c.mnemonique === mnemo);
+    if (!cours) return;
+
+    const note = liste_notes.find(n => n.matricule === inscrit.matricule && n.mnemonique === mnemo);
+    if (note && note.note !== null && !isNaN(note.note)) {
+      totalPondere += note.note * cours.credit;
+      totalCredits += cours.credit;
+    }
+  });
+
+  if (totalCredits === 0) return null; 
+  return totalPondere / totalCredits;
+}
+
+function reussite(inscription, liste_cours, liste_notes) {
+  const ectsObtenus = ects_obtenus(inscription, liste_cours, liste_notes);
+  const moyenne = moyenne_ponderee(inscription, liste_cours, liste_notes);
+
+  if (ectsObtenus >= 60) return true;
+
+  const coursMnem = cours_inscrits(inscription);
+  for (const mnemo of coursMnem) {
+    const note = liste_notes.find(n => n.matricule === inscription.matricule && n.mnemonique === mnemo);
+    if (!note || note.note === null) { // dès qu'un cours n'a pas de note, on échoue
+      return false; 
+    }
+  }
+
+  return moyenne !== null && moyenne >= 10;
+}
+
+
+
+function details(inscrit, liste_cours, liste_notes) {
+  return cours_inscrits(inscrit)
+    .map(mnemo => {
+      const cours = liste_cours.find(c => c.mnemonique === mnemo);
+      const noteObj = liste_notes.find(
+        n => n.matricule === inscrit.matricule && n.mnemonique === mnemo
+      );
+
+      return {
+        mnemonique: mnemo,
+        intitule: cours ? cours.intitule : null,
+        credit: cours ? cours.credit : null,
+        titulaire: cours ? cours.titulaire : null,
+        note: noteObj ? noteObj.note : null
+      };
+    })
+    .sort((a, b) => a.mnemonique.localeCompare(b.mnemonique));
+}
+
+module.exports = {
+  cours_inscrits,
+  calculECTS,
+  ects_total_inscrits,
+  ects_obtenus,
+  moyenne_ponderee,
+  reussite,
+  details
+};
+
