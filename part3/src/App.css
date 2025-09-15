@@ -1,0 +1,27 @@
+/* theme.css */
+
+:root {
+  --ulb-blue: #003366;
+  --ulb-light: #0066cc;
+  --ulb-text: #000; 
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.sidebar .nav-link {
+  color: #000; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 0.25rem;
+}
+
+/* Hover */
+.sidebar .nav-link:hover {
+  background-color: #0b5394;
+  color: #fff !important;
+  text-decoration: none;
+}
