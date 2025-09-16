@@ -21,7 +21,7 @@ POST http://localhost:3000/cours
 Content-Type: application/json
 
 {
-  "mnemonique": "INF121",
+  "mnemonique": "INF12",
   "intitule": "test1",
   "credit": 5,
   "titulaire": "test2"
