@@ -2,11 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Table, Spinner, Alert } from "react-bootstrap";
 import { getNotes } from "../services/api";
 
-function formatNote(note) {
-  if (note < 10) return { text: note, className: "text-danger" }; // rouge si <10
-  return { text: note, className: "" }; // normal sinon
-}
-
 function Notes() {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
