@@ -6,7 +6,7 @@ import Logo_ULB from "../assets/logo2_ulb.svg";
 function Navigation() {
   return (
   
-    <div className="d-flex flex-column p-3 vh-100 position-fixed navigation" style={{ width: "250px"}}>
+    <div className="d-flex flex-column p-3 navigation" style={{ width: "250px"}}>
      <img 
         src={Logo_ULB}
         alt="Logo Navigation" 

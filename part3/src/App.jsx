@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Inscriptions from "./components/Inscriptions";
 import Cours from "./components/Cours";
 import Notes from "./components/Notes";
+import InscriptionDetail from "./components/InscriptionDetail";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <div className="flex-grow-1 p-4">
           <Routes>
             <Route path="/inscriptions" element={<Inscriptions />} />
+            <Route path="/inscriptions/:matricule" element={<InscriptionDetail/>} />
             <Route path="/" element={<Cours />} />
             <Route path="/notes" element={<Notes />} />
           </Routes>

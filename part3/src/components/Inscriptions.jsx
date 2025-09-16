@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Table, Spinner, Alert, Card, Row, Col } from "react-bootstrap";
+import { Table, Spinner, Alert, Card, Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { getInscriptions } from "../services/api";
+import { Eye } from "lucide-react";
+
 function YearCard({ annee, total }) {
   return (
     <Card className="text-center">
@@ -11,10 +14,12 @@ function YearCard({ annee, total }) {
     </Card>
   );
 }
+
 function Inscriptions() {
   const [inscriptions, setInscriptions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getInscriptions()
@@ -36,16 +41,17 @@ function Inscriptions() {
   return (
     <div className="container mt-4">
       <h2 className="mb-3">Liste des inscriptions</h2>
-      <h3 className="mb-3">Nombres total d'étudiants inscrits : {inscriptions.length}</h3>
+      <h3 className="mb-3">Nombre total d'étudiants inscrits : {inscriptions.length}</h3>
+
       <Row className="mb-4">
         <Col md={4}>
-         <YearCard annee={1} total={totalParAnnee(1)} />
+          <YearCard annee={1} total={totalParAnnee(1)} />
         </Col>
         <Col md={4}>
-          <YearCard annee={2} total={totalParAnnee(3)} />
+          <YearCard annee={2} total={totalParAnnee(2)} />
         </Col>
         <Col md={4}>
-          <YearCard annee={3} total={totalParAnnee(2)} />
+          <YearCard annee={3} total={totalParAnnee(3)} />
         </Col>
       </Row>
 
@@ -57,6 +63,7 @@ function Inscriptions() {
             <th>Prénom</th>
             <th>Année</th>
             <th>Nombre de cours</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -67,6 +74,15 @@ function Inscriptions() {
               <td>{ins.prenom}</td>
               <td>{ins.annee_etude}</td>
               <td>{JSON.parse(ins.cours_json).length}</td>
+              <td>
+                <Button
+                  variant="primary"
+                  size="sm"
+                  onClick={() => navigate(`/inscriptions/${ins.matricule}`)}
+                >
+                   <Eye size={18}/>
+                </Button>
+              </td>
             </tr>
           ))}
         </tbody>
