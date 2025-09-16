@@ -8,7 +8,7 @@ const Cours = {
     db.get("SELECT * FROM liste_cours WHERE mnemonique = ?", [mnemonique], callback);
   },
   create: (mnemonique, intitule, credit, titulaire, callback) => {
-  const regex = `/^[A-Z]{3}[0-9]{3}$/`;
+  const regex = /^[A-Z]{3}[0-9]{3}$/;
   if (!regex.test(mnemonique)) {
     return callback(new Error("Le mnemonique doit contenir 3 lettres majuscules suivies de 3 chiffres (ex: INF120)"));
   }
