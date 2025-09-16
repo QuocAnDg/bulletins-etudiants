@@ -1,0 +1,301 @@
+[
+  {
+    "matricule": "2023001",
+    "nom": "Dupont",
+    "prenom": "Marie",
+    "annee": 1,
+    "ects_total_inscrits": 19,
+    "ects_obtenus": 19,
+    "moyenne_ponderee": 14.421052631578947,
+    "reussite": true,
+    "details": [
+      {
+        "mnemonique": "INF120",
+        "intitule": "Introduction à la programmation",
+        "credit": 6,
+        "titulaire": "Dr. Martin",
+        "note": 16
+      },
+      {
+        "mnemonique": "MAT101",
+        "intitule": "Analyse mathématique I",
+        "credit": 5,
+        "titulaire": "Pr. Lefèvre",
+        "note": 14
+      },
+      {
+        "mnemonique": "PSY100",
+        "intitule": "Introduction à la psychologie",
+        "credit": 4,
+        "titulaire": "Dr. Moreau",
+        "note": 15
+      },
+      {
+        "mnemonique": "STA100",
+        "intitule": "Statistiques de base",
+        "credit": 4,
+        "titulaire": "Pr. Dubois",
+        "note": 12
+      }
+    ]
+  },
+  {
+    "matricule": "2023002",
+    "nom": "Lambert",
+    "prenom": "Thomas",
+    "annee": 1,
+    "ects_total_inscrits": 19,
+    "ects_obtenus": 19,
+    "moyenne_ponderee": 12.105263157894736,
+    "reussite": true,
+    "details": [
+      {
+        "mnemonique": "HIS115",
+        "intitule": "Histoire contemporaine",
+        "credit": 3,
+        "titulaire": "Pr. Fontaine",
+        "note": 11
+      },
+      {
+        "mnemonique": "INF120",
+        "intitule": "Introduction à la programmation",
+        "credit": 6,
+        "titulaire": "Dr. Martin",
+        "note": 12
+      },
+      {
+        "mnemonique": "MAT101",
+        "intitule": "Analyse mathématique I",
+        "credit": 5,
+        "titulaire": "Pr. Lefèvre",
+        "note": 13
+      },
+      {
+        "mnemonique": "STA200",
+        "intitule": "Statistiques inférentielles",
+        "credit": 5,
+        "titulaire": "Pr. Dubois",
+        "note": 12
+      }
+    ]
+  },
+  {
+    "matricule": "2023002",
+    "nom": "Lambert",
+    "prenom": "Thomas",
+    "annee": 2,
+    "ects_total_inscrits": 21,
+    "ects_obtenus": 16,
+    "moyenne_ponderee": 11.80952380952381,
+    "reussite": true,
+    "details": [
+      {
+        "mnemonique": "INF220",
+        "intitule": "Structures de données",
+        "credit": 6,
+        "titulaire": "Dr. Martin",
+        "note": 13
+      },
+      {
+        "mnemonique": "MAT201",
+        "intitule": "Analyse mathématique II",
+        "credit": 5,
+        "titulaire": "Pr. Lefèvre",
+        "note": 14
+      },
+      {
+        "mnemonique": "PSY210",
+        "intitule": "Psychologie cognitive",
+        "credit": 5,
+        "titulaire": "Dr. Moreau",
+        "note": 8
+      },
+      {
+        "mnemonique": "STA200",
+        "intitule": "Statistiques inférentielles",
+        "credit": 5,
+        "titulaire": "Pr. Dubois",
+        "note": 12
+      }
+    ]
+  },
+  {
+    "matricule": "2023003",
+    "nom": "Nguyen",
+    "prenom": "Clara",
+    "annee": 3,
+    "ects_total_inscrits": 20,
+    "ects_obtenus": 20,
+    "moyenne_ponderee": 14.75,
+    "reussite": true,
+    "details": [
+      {
+        "mnemonique": "ETH200",
+        "intitule": "Éthique et déontologie",
+        "credit": 3,
+        "titulaire": "Pr. Petit",
+        "note": 17
+      },
+      {
+        "mnemonique": "INF320",
+        "intitule": "Algorithmes avancés",
+        "credit": 6,
+        "titulaire": "Dr. Martin",
+        "note": 13
+      },
+      {
+        "mnemonique": "PSY310",
+        "intitule": "Neuropsychologie",
+        "credit": 6,
+        "titulaire": "Dr. Bernard",
+        "note": 16
+      },
+      {
+        "mnemonique": "STA300",
+        "intitule": "Modélisation statistique",
+        "credit": 5,
+        "titulaire": "Pr. Dubois",
+        "note": 14
+      }
+    ]
+  },
+  {
+    "matricule": "2023004",
+    "nom": "Rossi",
+    "prenom": "Luca",
+    "annee": 2,
+    "ects_total_inscrits": 13,
+    "ects_obtenus": 13,
+    "moyenne_ponderee": 11.307692307692308,
+    "reussite": true,
+    "details": [
+      {
+        "mnemonique": "MAT201",
+        "intitule": "Analyse mathématique II",
+        "credit": 5,
+        "titulaire": "Pr. Lefèvre",
+        "note": 10
+      },
+      {
+        "mnemonique": "SOC130",
+        "intitule": "Sociologie générale",
+        "credit": 3,
+        "titulaire": "Pr. Colin",
+        "note": 14
+      },
+      {
+        "mnemonique": "STA200",
+        "intitule": "Statistiques inférentielles",
+        "credit": 5,
+        "titulaire": "Pr. Dubois",
+        "note": 11
+      }
+    ]
+  },
+  {
+    "matricule": "2023004",
+    "nom": "Rossi",
+    "prenom": "Luca",
+    "annee": 3,
+    "ects_total_inscrits": 17,
+    "ects_obtenus": 17,
+    "moyenne_ponderee": 12.352941176470589,
+    "reussite": false,
+    "details": [
+      {
+        "mnemonique": "INF300",
+        "intitule": null,
+        "credit": null,
+        "titulaire": null,
+        "note": null
+      },
+      {
+        "mnemonique": "NEU301",
+        "intitule": "Neurosciences expérimentales",
+        "credit": 6,
+        "titulaire": "Dr. Bernard",
+        "note": 13
+      },
+      {
+        "mnemonique": "PSY310",
+        "intitule": "Neuropsychologie",
+        "credit": 6,
+        "titulaire": "Dr. Bernard",
+        "note": 12
+      },
+      {
+        "mnemonique": "STA300",
+        "intitule": "Modélisation statistique",
+        "credit": 5,
+        "titulaire": "Pr. Dubois",
+        "note": 12
+      }
+    ]
+  },
+  {
+    "matricule": "2023005",
+    "nom": "Bernard",
+    "prenom": "Sophie",
+    "annee": 2,
+    "ects_total_inscrits": 14,
+    "ects_obtenus": 14,
+    "moyenne_ponderee": 14.071428571428571,
+    "reussite": true,
+    "details": [
+      {
+        "mnemonique": "INF220",
+        "intitule": "Structures de données",
+        "credit": 6,
+        "titulaire": "Dr. Martin",
+        "note": 15
+      },
+      {
+        "mnemonique": "PSY210",
+        "intitule": "Psychologie cognitive",
+        "credit": 5,
+        "titulaire": "Dr. Moreau",
+        "note": 13
+      },
+      {
+        "mnemonique": "SOC130",
+        "intitule": "Sociologie générale",
+        "credit": 3,
+        "titulaire": "Pr. Colin",
+        "note": 14
+      }
+    ]
+  },
+  {
+    "matricule": "2023006",
+    "nom": "Haddad",
+    "prenom": "Amine",
+    "annee": 1,
+    "ects_total_inscrits": 11,
+    "ects_obtenus": 11,
+    "moyenne_ponderee": 11.636363636363637,
+    "reussite": true,
+    "details": [
+      {
+        "mnemonique": "HIS115",
+        "intitule": "Histoire contemporaine",
+        "credit": 3,
+        "titulaire": "Pr. Fontaine",
+        "note": 12
+      },
+      {
+        "mnemonique": "PSY100",
+        "intitule": "Introduction à la psychologie",
+        "credit": 4,
+        "titulaire": "Dr. Moreau",
+        "note": 13
+      },
+      {
+        "mnemonique": "STA100",
+        "intitule": "Statistiques de base",
+        "credit": 4,
+        "titulaire": "Pr. Dubois",
+        "note": 10
+      }
+    ]
+  }
+]
