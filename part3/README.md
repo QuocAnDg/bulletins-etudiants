@@ -1,5 +1,7 @@
 # Partie 3 : Interface Utilisateur Responsive
 
+Utilisation de l'IA comme support de créativité pour l'UI/UX
+
 ## Objectif
 Créer une interface web permettant de consulter les données par l’API.
 
