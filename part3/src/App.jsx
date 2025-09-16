@@ -5,7 +5,6 @@ import Navigation from "./components/Navigation";
 import Inscriptions from "./components/Inscriptions";
 import Cours from "./components/Cours";
 import Notes from "./components/Notes";
-import "./App.css"
 
 function App() {
   return (

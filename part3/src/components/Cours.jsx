@@ -25,7 +25,7 @@ function Cours() {
     <div className="container mt-4">
       <h2>Liste des cours</h2>
       <Table striped bordered hover responsive>
-        <thead className="table-dark">
+        <thead className="table-primary">
           <tr>
             <th>Mnemonique</th>
             <th>Intitulé</th>

@@ -1,15 +1,17 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import { BookOpen, Users, ClipboardList } from "lucide-react";
-import Logo_ULB from "../assets/logo_ulb.png";
-import "../App.css"
+import Logo_ULB from "../assets/logo2_ulb.svg";
+
 function Navigation() {
   return (
-    <div className="d-flex flex-column p-3" style={{ width: "250px"}}>
-      <img 
+  
+    <div className="d-flex flex-column p-3 vh-100 position-fixed navigation" style={{ width: "250px"}}>
+     <img 
         src={Logo_ULB}
         alt="Logo Navigation" 
-        className="mb-4" 
+        className="mb-4 mx-auto d-block" 
+        width= "100px"
       />
       <Nav className="flex-column sidebar">
         <Nav.Link href="/" className="d-flex align-items-center sidebar-link">
@@ -26,6 +28,7 @@ function Navigation() {
         </Nav.Link>
       </Nav>
     </div>
+
   );
 }
 

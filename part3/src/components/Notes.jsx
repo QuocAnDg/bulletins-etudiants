@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Table, Spinner, Alert } from "react-bootstrap";
 import { getNotes } from "../services/api";
 
+function formatNote(note) {
+  if (note < 10) return { text: note, className: "text-danger" }; // rouge si <10
+  return { text: note, className: "" }; // normal sinon
+}
+
 function Notes() {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,7 +31,7 @@ function Notes() {
     <div className="container mt-4">
       <h2 className="mb-3">Liste des notes</h2>
       <Table striped bordered hover responsive>
-        <thead className="table-dark">
+        <thead className="table-primary">
           <tr>
             <th>Matricule</th>
             <th>Mnemonique</th>
@@ -38,7 +43,7 @@ function Notes() {
             <tr key={index}>
               <td>{n.matricule}</td>
               <td>{n.mnemonique}</td>
-              <td>{n.note}</td>
+              <td style={{ color: n.note < 10 ? "red" : "green" }}>{n.note}</td>
             </tr>
           ))}
         </tbody>
